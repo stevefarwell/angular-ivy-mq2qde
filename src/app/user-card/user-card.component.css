@@ -1,0 +1,13 @@
+
+.card{
+  border: 0.025rem solid #333;
+}
+
+.card-header {
+  padding: .5rem 1rem;
+}
+
+.card-body{
+  padding: 1rem;
+}
+

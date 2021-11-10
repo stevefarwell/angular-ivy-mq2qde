@@ -1,0 +1,8 @@
+
+
+<p>Total records : {{ data.length }}</p>
+
+<div *ngFor = "let user of data">
+  <app-user-card [user]="user" (delete)=deleteDataItem($event)> 
+  </app-user-card>
+</div>
