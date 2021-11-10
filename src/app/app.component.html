@@ -4,8 +4,10 @@
     <input id="search" [formControl]="searchInput" />
     <button type="submit">Search</button>
   </form>
-
-  <app-user-card *ngIf="selectedUser" [user]="selectedUser"></app-user-card>
+  <div *ngIf="selectedUser">
+    Result:
+    <app-user-card [user]="selectedUser"></app-user-card>
+  </div>
 </div>
 <p>Total records : {{ data.length }}</p>
 <div class="flex-grid"></div>
