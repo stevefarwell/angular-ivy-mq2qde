@@ -13,7 +13,7 @@ export class AppComponent {
   form: FormGroup;
   searchInput: FormControl;
 
-  selectedUser: any;
+  selectedUser: User;
 
   constructor(fb: FormBuilder) {
     this.searchInput = new FormControl('');
@@ -23,7 +23,7 @@ export class AppComponent {
     });
   }
 
-  data = [
+  data: Array<User> = [
     {
       id: 1,
       name: 'Leanne Graham',
@@ -256,18 +256,18 @@ export class AppComponent {
     },
   ];
 
-  deleteDataItem(itemId) {
+  deleteDataItem(itemId): void {
     console.log('itemId: ', itemId);
 
-    const fitered = this.data.filter((item) => item.id !== itemId);
-    this.data = [...fitered];
+    const filtered = this.data.filter((item) => item.id !== itemId);
+    this.data = [...filtered];
   }
 
-  searchHandler() {
+  searchHandler(): void {
     console.log('this.searchInput.value: ', this.searchInput.value);
-    this.selectedUser = this.data.filter(
-      (item) => item.username === this.searchInput.value
-    ).pop();
+    this.selectedUser = this.data
+      .filter((item) => item.username === this.searchInput.value)
+      .pop();
 
     console.log('result: ', this.selectedUser);
   }
