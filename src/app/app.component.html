@@ -1,8 +1,15 @@
+<div>
+  <form [formGroup]="form" (ngSubmit)="searchHandler()">
+    <label for="search">Search:</label>
+    <input id="search" [formControl]="searchInput" />
+    <button type="submit">Search</button>
+  </form>
 
-
+  <app-user-card *ngIf="selectedUser" [user]="selectedUser"></app-user-card>
+</div>
 <p>Total records : {{ data.length }}</p>
-
-<div *ngFor = "let user of data">
-  <app-user-card [user]="user" (delete)=deleteDataItem($event)> 
+<div class="flex-grid"></div>
+<div *ngFor="let user of data" class="col">
+  <app-user-card [user]="user" (delete)="deleteDataItem($event)">
   </app-user-card>
 </div>

@@ -1,3 +1,13 @@
 p {
   font-family: Lato;
 }
+
+.flex-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.col {
+  width: 48%;
+  display: inline-block;
+}
