@@ -264,11 +264,8 @@ export class AppComponent {
   }
 
   searchHandler(): void {
-    console.log('this.searchInput.value: ', this.searchInput.value);
     this.selectedUser = this.data
       .filter((item) => item.username === this.searchInput.value)
       .pop();
-
-    console.log('result: ', this.selectedUser);
   }
 }
