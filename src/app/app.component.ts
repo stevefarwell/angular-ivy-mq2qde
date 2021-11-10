@@ -23,7 +23,7 @@ export class AppComponent {
     });
   }
 
-  data: Array<User> = [
+  data: User[] = [
     {
       id: 1,
       name: 'Leanne Graham',
